@@ -1,0 +1,83 @@
+
+<div class="home">
+  <header class="land">
+    <div class="content">
+      <div class="wrapper">
+        <h1 class="title">Entertain Your Life Pastime</h1>
+        <p class="subTitle">If you doubt yourself,then indeed you stand on shaky ground. </p>
+        <a class="button" routerLink="/videos">Let's Go</a>
+        <!-- <routerLink class="button" >Let's Go</routerLink> -->
+      </div>
+    </div>
+  </header>
+  <section class="intro">
+    <p class="title">What's here?</p>
+    <div class="contentWrapper">
+      <div>
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-music"></use>
+        </svg>
+        <p>动听音乐，聆听你心</p>
+      </div>
+      <div>
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-video"></use>
+        </svg>
+        <p>搞笑视频，欢笑你我</p>
+      </div>
+      <div>
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-news"></use>
+        </svg>
+        <p>科技要闻，走向前沿</p>
+      </div>
+      <div>
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-beauty"></use>
+        </svg>
+        <p>美女照片，博你眼球</p>
+      </div>
+    </div>
+  </section>
+  <section class="picture">
+    <div class="pic-left">
+      <div class="pic-warpper">
+        <img src="https://drscdn.500px.org/photo/211460087/q%3D80_h%3D450/be5a500bd76786b068924c9b0a9d54c1" alt="">
+      </div>
+      <div class="pic-warpper mid">
+        <img src="https://drscdn.500px.org/photo/211414721/q%3D80_h%3D300/2a249ade2ffe9733a9939716b345db31" alt="">
+        <img src="https://drscdn.500px.org/photo/211406037/q%3D80_h%3D300/5f7fe5930b4d1780897d8eb894415d0c" alt="">
+      </div>
+      <div class="pic-warpper">
+        <img src="https://drscdn.500px.org/photo/220903987/q%3D80_m%3D1000/v2?webp=true&sig=622ad017eda0a2ea2f0b329a0a0bc58da34e6061d6f95a7cd5232faf9d70e6d6"
+          alt="">
+      </div>
+    </div>
+    <div class="pic-right">
+      <h2>美女高清大图</h2>
+
+      <a routerLink="/images">READMORE</a>
+      <!-- <router-link :to="'/images'">READMORE</router-link> -->
+    </div>
+  </section>
+  <section class="tecStack">
+    <h3 class="ts-title">Technology Stack</h3>
+    <div class="logo-list" ref="logoList">
+      <figure *ngFor=" let ts of tecStacks" class="figure" ref="figure">
+        <a [href]="ts.href">
+          <img width="250" [src]="ts.url" [alt]="ts.name">
+        </a>
+        <figcaption class="figcaption">
+          <span class="repo-name">{{ts.user}}</span>
+          <span class="star">{{ts.star_count}}</span>
+        </figcaption>
+      </figure>
+    </div>
+    <button class="more" (click)="more">
+      <span ng-show="!showMore">MORE</span>
+      <span ng-show="showMore">CLOSE</span>
+    </button>
+  </section>
+  <section class="gap">
+  </section>
+</div>
