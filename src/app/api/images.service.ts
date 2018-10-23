@@ -6,13 +6,15 @@ const NODE_API_BASE_URL = environment.node_api_base_url;
 @Injectable({
   providedIn: 'root'
 })
-export class TomatoService {
+export class ImagesService {
 
   constructor(private http: HttpClient) { }
 
-  
+  fetchImages(count) {
+    return this.http.get(`${NODE_API_BASE_URL}/api/images?count=${count}`);
+  }
 
-  getRepoStar(user, repo) {
-    return this.http.get(`https://api.github.com/repos/${user}/${repo}`);
+  fetchImageById(id){
+    return this.http.get(`${NODE_API_BASE_URL}/api/images/${id}`);
   }
 }

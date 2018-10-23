@@ -5,7 +5,7 @@
       <div class="wrapper">
         <h1 class="title">Entertain Your Life Pastime</h1>
         <p class="subTitle">If you doubt yourself,then indeed you stand on shaky ground. </p>
-        <a class="button" routerLink="/videos">Let's Go</a>
+        <a class="button" [routerLink]="['/videos']">Let's Go</a>
         <!-- <routerLink class="button" >Let's Go</routerLink> -->
       </div>
     </div>
@@ -56,14 +56,14 @@
     <div class="pic-right">
       <h2>美女高清大图</h2>
 
-      <a routerLink="/images">READMORE</a>
+      <a [routerLink]="['/images']">READMORE</a>
       <!-- <router-link :to="'/images'">READMORE</router-link> -->
     </div>
   </section>
   <section class="tecStack">
     <h3 class="ts-title">Technology Stack</h3>
-    <div class="logo-list" ref="logoList">
-      <figure *ngFor=" let ts of tecStacks" class="figure" ref="figure">
+    <div class="logo-list" #logoList>
+      <figure *ngFor=" let ts of tecStacks" class="figure" #figure>
         <a [href]="ts.href">
           <img width="250" [src]="ts.url" [alt]="ts.name">
         </a>
@@ -73,9 +73,9 @@
         </figcaption>
       </figure>
     </div>
-    <button class="more" (click)="more">
-      <span ng-show="!showMore">MORE</span>
-      <span ng-show="showMore">CLOSE</span>
+    <button class="more" (click)="more()">
+      <span [hidden]="showMore">MORE</span>
+      <span [hidden]="!showMore">CLOSE</span>
     </button>
   </section>
   <section class="gap">

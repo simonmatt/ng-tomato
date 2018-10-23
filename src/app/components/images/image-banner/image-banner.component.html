@@ -1,0 +1,32 @@
+<div class="imageBanner">
+  <div class="img-wrapper">
+    <img [src]="imageInfo.image_url">
+  </div>
+  <div class="details">
+    <div class="userInfo">
+      <img class="avatar" [src]="imageInfo.user.avatar_url">
+      <span>{{ imageInfo.user.name }}</span>
+    </div>
+    <div class="comment">
+      <span class="placeholder" [hidden]="comments.length>0">No comments here...</span>
+      <p class="comment-info" *ngFor="let comment of comments">
+        <span class="comment-auth">{{ comment.user && comment.user.name }}</span>
+        <span class="comment-text">{{ comment.text }}</span>
+      </p>
+    </div>
+    <div class="zan" [ngClass]="{'selected': isSelected}">
+      <svg *ngIf="!isSelected" class="icon" aria-hidden="true" (click)="collect()">
+        <use xlink:href="#icon-zan1"></use>
+      </svg>
+      <svg *ngIf="isSelected" class="icon" aria-hidden="true" (click)="collect()">
+        <use xlink:href="#icon-jinlingyingcaiwangtubiao24"></use>
+      </svg>
+      <span>{{ imageInfo.collections_count }}</span> Likes
+    </div>
+    <textarea placeholder="Write comment here..." [(ngModel)]="comment" cols="30" rows="10" class="postComment"
+      autofocus (keyup.enter)="postComment($event)"></textarea>
+  </div>
+  <span class="closeBanner" (click)="closeBanner()">&times;</span>
+  <span [hidden]="this.index <= 0" class="pre" (click)="preImg()">&lt;</span>
+  <span class="next" (click)="nextImg()">&gt;</span>
+</div>

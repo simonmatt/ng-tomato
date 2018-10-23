@@ -1,0 +1,33 @@
+<div class="video">
+  <div class="video-top">
+    <div class="video-img">
+      <img [src]="video.coverSrc" alt="">
+    </div>
+    <div class="video-mask">
+      <a [routerLink]="['/video',video._id]">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-video1"></use>
+        </svg>
+      </a>
+    </div>
+  </div>
+  <div class="video-info">
+    <a [routerLink]="['/video',video._id]">
+      <h2 class="video-title">{{video.title}}</h2>
+    </a>
+    <div class="auth">
+      <a [routerLink]="['/page']" [queryParams]="{user: video.user._id}" class="auth-avatar">
+        <img [src]="video.user.avatar" alt="">
+      </a>
+      <a [routerLink]="['/page']" [queryParams]="{user: video.user._id}" class="auth-name">
+        <span>{{ video.user.name }}</span>
+      </a>
+      <span class="timeago">{{ video.create_at | timeAgo }}</span>
+      <a href="#" class="hidden" >
+        X
+        <span class="alter">Not Interest</span>
+      </a>
+    </div>
+  </div>
+</div>
+

@@ -1441,6 +1441,11 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
+classlist.js@^1.1.20150312:
+  version "1.1.20150312"
+  resolved "http://registry.npm.taobao.org/classlist.js/download/classlist.js-1.1.20150312.tgz#1d70842f7022f08d9ac086ce69e5b250f2c57789"
+  integrity sha1-HXCEL3Ai8I2awIbOaeWyUPLFd4k=
+
 clean-css@4.2.x, clean-css@^4.1.11:
   version "4.2.1"
   resolved "http://registry.npm.taobao.org/clean-css/download/clean-css-4.2.1.tgz#2d411ef76b8569b6d0c84068dabe85b0aa5e5c17"
@@ -4580,6 +4585,11 @@ mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0:
   dependencies:
     minimist "0.0.8"
 
+moment@^2.22.2:
+  version "2.22.2"
+  resolved "http://registry.npm.taobao.org/moment/download/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66"
+  integrity sha1-PCV/mDn8DpP/UxSWMiOeuQeD/2Y=
+
 move-concurrently@^1.0.1:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/move-concurrently/download/move-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"
@@ -4660,6 +4670,13 @@ ngx-bootstrap@^3.0.1:
   version "3.0.1"
   resolved "http://registry.npm.taobao.org/ngx-bootstrap/download/ngx-bootstrap-3.0.1.tgz#e98d2fc6340f32a9d358cd08e8fda7dcb23bdab3"
   integrity sha1-6Y0vxjQPMqnTWM0I6P2n3LI72rM=
+
+ngx-logger@^3.3.3:
+  version "3.3.3"
+  resolved "http://registry.npm.taobao.org/ngx-logger/download/ngx-logger-3.3.3.tgz#5c62dc5e3cdf5eba0724276b3102b5893a322cbb"
+  integrity sha1-XGLcXjzfXroHJCdrMQK1iToyLLs=
+  dependencies:
+    tslib "^1.9.0"
 
 nice-try@^1.0.4:
   version "1.0.5"
@@ -7133,6 +7150,11 @@ verror@1.10.0:
     assert-plus "^1.0.0"
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
+
+videogular2@^6.3.0:
+  version "6.3.0"
+  resolved "http://registry.npm.taobao.org/videogular2/download/videogular2-6.3.0.tgz#0658b4f05269d767a3e8db7ba059b99084f40e94"
+  integrity sha1-Bli08FJp12ej6Nt7oFm5kIT0DpQ=
 
 vm-browserify@0.0.4:
   version "0.0.4"

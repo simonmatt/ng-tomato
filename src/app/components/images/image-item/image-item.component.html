@@ -1,0 +1,21 @@
+<div class="imgBox">
+  <div class="imgUserInfo">
+    <img [src]="image.user.avatar_url">
+    <span>
+      {{image.user.name}}
+    </span>
+  </div>
+  <div class="image-wrapper">
+    <a [routerLink]="['/images',image._id]">
+      <img [src]="image.image_url" class="image" alt="">
+    </a>
+  </div>
+  <div class="description" [hidden]="!image.description">
+    <span [innerHTML]="image.description"></span>
+  </div>
+  <div class="collect" [ngClass]="{'selected':isSelected}" (click)="isSelected=!isSelected">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-zan1"></use>
+    </svg>
+  </div>
+</div>

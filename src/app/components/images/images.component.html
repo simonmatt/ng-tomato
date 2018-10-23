@@ -1,3 +1,9 @@
-<p>
-  images works!
-</p>
+<div class="imagelist">
+<div class="imageswrapper">
+  <app-loading  [hidden]="images.length>0"></app-loading>
+  <app-image-item *ngFor="let image of images" [image]="image"></app-image-item>
+</div>
+<a href="#" (click)="fetchMore($event)" [hidden]="images.length <= 0 || fetchCount > 1" class="loadmore">Load More</a>
+<router-outlet></router-outlet>
+
+</div>

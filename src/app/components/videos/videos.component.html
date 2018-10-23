@@ -1,3 +1,12 @@
-<p>
-  videos works!
-</p>
+<div class="videolist">
+  <div class="videos">
+    <app-loading [hidden]="videos.length>0"></app-loading>
+    <app-video-item *ngFor="let video of videos" [video]="video"></app-video-item>
+
+  </div>
+  <div class="page">
+    <pagination [(ngModel)]="currentPage" [totalItems]="total" [boundaryLinks]="!showBoundaryLinks" [itemsPerPage]="itemsPerPage"
+      (pageChanged)="pageChanged($event)"></pagination>
+
+  </div>
+</div>

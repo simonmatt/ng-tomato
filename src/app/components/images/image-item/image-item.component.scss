@@ -1,0 +1,85 @@
+@import "../../../../assets/scss/mixins.scss";
+
+.imgBox {
+  width: 16.5rem;
+  margin: 1.2rem 0 0 0.6rem;
+  border: 1px solid #eee;
+  text-align: center;
+  background: #eee;
+  position: relative;
+  overflow: hidden;
+  display:inline-block;
+  @include mediaQ(480px) {
+    width: 45%;
+  }
+  @include mediaQ(768px) {
+    margin-top: 1.2rem;
+  }
+
+  .image-wrapper {
+    &:hover + .description {
+      transform: translateY(0);
+    }
+  }
+  .image {
+    height: 16.5rem;
+    max-width: 100%;
+    cursor: pointer;
+  }
+
+  .imgUserInfo {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    background: white;
+
+    img {
+      height: 80%;
+      border-radius: 50%;
+      margin-right: 0.5rem;
+      border: 1px solid #eee;
+    }
+  }
+
+  .description {
+    position: absolute;
+    // 实现两行文字省略号
+    width: 100%;
+    // height: 2.3rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: flex;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    bottom: 1px;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    transform: translateY(110%);
+    transition: all 0.3s;
+    padding: 0.1rem 0;
+    max-height: 4rem;
+
+    &:hover {
+      transform: translateY(0);
+    }
+  }
+
+  .selected > svg {
+    color: red;
+  }
+
+  .collect {
+    position: absolute;
+    right: 6%;
+    top: 6%;
+    cursor: pointer;
+
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+}

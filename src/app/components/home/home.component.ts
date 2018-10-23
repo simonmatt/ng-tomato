@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 import { TomatoService } from '../../api/tomato.service';
+import { NGXLogger } from 'ngx-logger';
 
 @Component({
   selector: 'app-home',
@@ -53,18 +54,31 @@ export class HomeComponent implements OnInit {
   ];
 
   showMore: boolean = false;
-  constructor(private tomatoService: TomatoService) { }
+
+  @ViewChild('logoList') logoList: ElementRef;
+  @ViewChild('figure') figure: ElementRef;
+
+  constructor(private tomatoService: TomatoService,
+    private renderer2: Renderer2,
+    private logger:NGXLogger) {
+
+  }
 
   ngOnInit() {
     this.getRepos();
+    this.renderer2.listen('window', 'resize', (e) => {
+      //console.log(e);
+      this.setHeight();
+    });
   }
 
-  getRepos():void{
+  getRepos(): void {
     setTimeout(() => {
       this.tecStacks.forEach(ts => {
         this.tomatoService.getRepoStar(ts.user, ts.repo)
           .subscribe((res: any) => {
             //console.log(res);
+            this.logger.info(res);
             ts.star_count = res.stargazers_count;
             //console.log(ts);
           })
@@ -75,6 +89,18 @@ export class HomeComponent implements OnInit {
   more() {
     this.showMore = !this.showMore;
 
+    let logoList$ = this.logoList.nativeElement,
+      figure$ = this.logoList.nativeElement;
+    const singleHeight = figure$.offsetHeight;
+    logoList$.style.height = this.showMore ?
+      `${singleHeight * 2}px` : `${singleHeight}px`;
+  }
+
+  setHeight():void {
+    let logoList$ = this.logoList.nativeElement,
+      figure$ = this.logoList.nativeElement;
+    const singleHeight = figure$.offsetHeight;
+    logoList$.style.height = singleHeight + 'px';
   }
 
 }

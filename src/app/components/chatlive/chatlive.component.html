@@ -1,3 +1,43 @@
-<p>
-  chatlive works!
-</p>
+<div class="chat">
+  <div class="chat-box">
+    <div class="user-list">
+      <span class="title">Online Users</span>
+      <ul class="online-user">
+        <li>
+          <img [src]="user.avatar_url" alt="">
+          <span>{{ user.name }}</span>
+        </li>
+      </ul>
+    </div>
+    <div class="chat-window">
+      <span class="descript-title">Message</span>
+      <div class="chat-message" #chatMessage>
+        <ul>
+          <li class="message-info" *ngFor="let message of messages" [ngClass]="{ 'self': message.name === user.name}">
+            <ng-template *ngIf="message.type==='userMessage'">
+              <img [src]="message.avatar_url" alt="" class="message-user-avatar">
+              <div class="message-wrapper">
+                <span class="message-user">{{ message.name }}</span>
+                <p class="message-content">{{ message.message }}</p>
+              </div>
+            </ng-template>
+            <ng-template *ngIf="message.type === 'left'">
+              <p class="server-message">{{ message.name }} 离开</p>
+            </ng-template>
+
+            <ng-template *ngIf="message.type === 'join'">
+              <p class="server-message">{{ message.name }} 进入</p>
+            </ng-template>
+          </li>
+        </ul>
+      </div>
+
+      <div class="send-message">
+        <textarea v-model="message" class="message-text" placeholder="输入您的消息..." #textarea autofocus (keyup.enter)="sendMessage($event)"></textarea>
+        <svg class="icon" aria-hidden="true" (click)="sendMessage($event)">
+          <use xlink:href="#icon-sendemail"></use>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>

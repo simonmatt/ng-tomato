@@ -1,0 +1,53 @@
+@import '../../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import '../../../assets/scss/mixins.scss';
+
+
+.videolist {
+  font-size: 1rem;
+  @include stickFooter;
+  width: 100%;
+  position: relative;
+  background-image: url('https://1x.com/images/user/6872df05db6242eb3f61f8f1e646deb3-hd2.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 28.125rem;
+  @include mediaQ(480px) {
+    background-size: 100% 15rem;
+  }
+  @include mediaQ(768px, 481px) {
+    background-size: 100% 25rem;
+  }
+  @include mediaQ(960px, 769px) {
+    background-size: 100% 25rem;
+  }
+}
+
+.videos {
+  padding-top: 33rem;
+  padding-bottom: 3rem;
+  width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: wrap;
+  @include mediaQ(480px) {
+    padding-top: 15rem;
+  }
+  @include mediaQ(768px, 481px) {
+    padding-top: 27rem;
+  }
+  @include mediaQ(960px, 769px) {
+    padding-top: 27rem;
+  }
+  @include mediaQ(1365px, 961px) {
+    padding-top: 30rem;
+  }
+  @include mediaQ(1365px) {
+    justify-content: space-around;
+    width: 90%;
+  }
+}
+
+
+.page{
+  text-align: center;
+  margin:0 auto;
+}
