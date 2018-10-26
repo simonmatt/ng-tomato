@@ -20,13 +20,13 @@ export class VideosComponent implements OnInit {
   ngOnInit() {
     this.videosService.fetchVideos().subscribe((res: any) => {
       console.log(res);
-      this.logger.info(res);
+      //this.logger.info(res);
       this.total = res.total;
       this.videos = res.videos;
       this.showBoundaryLinks = true;
       this.itemsPerPage = this.videos.length;
       this.currentPage = 1;
-      console.log(this.videos[0])
+      //console.log(this.videos[0])
     })
   }
 

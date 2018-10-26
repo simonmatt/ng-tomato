@@ -25,6 +25,10 @@ import { DurationFormatPipe } from './duration-format.pipe';
 import { ImageItemComponent } from './components/images/image-item/image-item.component';
 import { ImageBannerComponent } from './components/images/image-banner/image-banner.component';
 import { SingleMediaPlayerComponent } from './components/single-media-player/single-media-player.component';
+import { SignBoxComponent } from './components/sign-box/sign-box.component';
+import { PostVideoComponent } from './components/post-video/post-video.component';
+import { PersonnelPageComponent } from './components/personnel-page/personnel-page.component';
+import { AuthGuard } from './auth.guard';
 
 
 const routes: Routes = [
@@ -39,7 +43,8 @@ const routes: Routes = [
   },
   {
     path: 'videos',
-    component: VideosComponent
+    component: VideosComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'video/:id',
@@ -57,11 +62,20 @@ const routes: Routes = [
   },
   {
     path: 'chat-live',
-    component: ChatliveComponent
+    component: ChatliveComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'about',
     component: AboutComponent
+  },
+  {
+    path: 'post/video',
+    component: PostVideoComponent
+  },
+  {
+    path: 'page',
+    component: PersonnelPageComponent
   }
 ]
 
@@ -81,13 +95,18 @@ const routes: Routes = [
     DurationFormatPipe,
     ImageItemComponent,
     ImageBannerComponent,
-    SingleMediaPlayerComponent
+    SingleMediaPlayerComponent,
+    SignBoxComponent,
+    PostVideoComponent,
+    PersonnelPageComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, {
+      enableTracing: true // for debug only
+    }),
     ModalModule.forRoot(),
     PaginationModule.forRoot(),
     LoggerModule.forRoot({
@@ -100,7 +119,8 @@ const routes: Routes = [
     VgOverlayPlayModule,
     VgBufferingModule
   ],
-  providers: [TomatoService],
+  entryComponents: [SignBoxComponent],
+  providers: [TomatoService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

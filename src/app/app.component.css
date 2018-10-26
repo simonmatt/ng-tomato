@@ -1,1 +1,13 @@
 
+
+[hidden]{
+  display:none !important;
+}
+
+.dropdown-menu{
+  text-transform: uppercase;
+}
+
+.dropdown-menu>a{
+ cursor: pointer;
+}

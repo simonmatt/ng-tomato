@@ -1,0 +1,32 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{title}}</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  
+  <form action="" class="form-horizontal">
+    <div class="form-group">
+      <label for="inputUsername" class="col-sm-2 control-label">Username</label>
+      <div class="col-sm-6">
+        <input type="text" name="inputUsername" id="inputUsername" placeholder="Username" class="form-control" [(ngModel)]="username">
+      </div>
+
+    </div>
+
+    <div class="form-group">
+      <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+      <div class="col-sm-6">
+        <input type="password" name="inputPassword" placeholder="Password" id="inputPassword" [(ngModel)]="password" class="form-control" >
+      </div>
+    </div>
+
+    <button class="btn btn-primary sign-button" (click)="sign($event)">{{title}}</button>
+  </form>
+  <a href="#" [hidden]="signType==='signup'" class="signup" (click)="switchSign($event)">Didn't have an account? Click to sign up</a>
+  <a href="#" [hidden]="signType==='signin'" class="signup" (click)="switchSign($event)">Sign in if you have an account already</a>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">{{closeBtnName}}</button>
+</div>

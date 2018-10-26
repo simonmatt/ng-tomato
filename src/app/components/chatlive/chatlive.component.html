@@ -34,9 +34,8 @@
 
       <div class="send-message">
         <textarea v-model="message" class="message-text" placeholder="输入您的消息..." #textarea autofocus (keyup.enter)="sendMessage($event)"></textarea>
-        <svg class="icon" aria-hidden="true" (click)="sendMessage($event)">
-          <use xlink:href="#icon-sendemail"></use>
-        </svg>
+        <span class="glyphicon glyphicon-ok btn" (click)="sendMessage($event)"></span>
+
       </div>
     </div>
   </div>
