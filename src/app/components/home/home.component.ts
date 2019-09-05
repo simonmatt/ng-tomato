@@ -73,17 +73,17 @@ export class HomeComponent implements OnInit {
   }
 
   getRepos(): void {
-    // setTimeout(() => {
-    //   this.tecStacks.forEach(ts => {
-    //     this.tomatoService.getRepoStar(ts.user, ts.repo)
-    //       .subscribe((res: any) => {
-    //         //console.log(res);
-    //         //this.logger.info(res);
-    //         ts.star_count = res.stargazers_count;
-    //         //console.log(ts);
-    //       })
-    //   })
-    // }, 5000);
+    setTimeout(() => {
+      this.tecStacks.forEach(ts => {
+        this.tomatoService.getRepoStar(ts.user, ts.repo)
+          .subscribe((res: any) => {
+            //console.log(res);
+            //this.logger.info(res);
+            ts.star_count = res.stargazers_count;
+            //console.log(ts);
+          })
+      })
+    }, 5000);
   }
 
   more() {

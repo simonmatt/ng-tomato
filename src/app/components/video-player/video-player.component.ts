@@ -33,14 +33,14 @@ export class VideoPlayerComponent implements OnInit {
     private videosService: VideosService) { }
 
   ngOnInit() {
-    // this.activatedRoute.params.subscribe(params => {
-    //   let id = params.id;
-    //   this.videosService.fetchVideoById(id)
-    //     .subscribe((video: any) => {
-    //       console.log(video)
-    //       this.playUrl = video.playUrl;
-    //     })
-    // });
+    this.activatedRoute.params.subscribe(params => {
+      let id = params.id;
+      this.videosService.fetchVideoById(id)
+        .subscribe((video: any) => {
+          console.log(video)
+          this.playUrl = video.playUrl;
+        })
+    });
 
     this.activatedRoute.params.map(res => res.id)
       .mergeMap(id => {
