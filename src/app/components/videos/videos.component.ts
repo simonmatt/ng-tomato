@@ -26,7 +26,7 @@ export class VideosComponent implements OnInit {
       this.showBoundaryLinks = true;
       this.itemsPerPage = this.videos.length;
       this.currentPage = 1;
-      //console.log(this.videos[0])
+      console.log(this.videos.length)
     })
   }
 
