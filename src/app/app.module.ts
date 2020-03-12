@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ModalModule, PaginationModule } from 'ngx-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
+import { LoggerModule } from 'ngx-logger';
 import { VgCoreModule } from 'videogular2/core';
 import { VgControlsModule } from 'videogular2/controls';
 import { VgOverlayPlayModule } from 'videogular2/overlay-play';
@@ -29,6 +29,7 @@ import { SignBoxComponent } from './components/sign-box/sign-box.component';
 import { PostVideoComponent } from './components/post-video/post-video.component';
 import { PersonnelPageComponent } from './components/personnel-page/personnel-page.component';
 import { AuthGuard } from './auth.guard';
+import { NgxLoggerLevel } from 'ngx-logger/lib/types/logger-level.enum';
 
 
 const routes: Routes = [

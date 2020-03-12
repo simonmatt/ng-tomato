@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { VideosService } from 'src/app/api/videos.service';
-import { NGXLogger } from 'ngx-logger';
+import {  } from 'ngx-logger';
+import { NgxLoggerLevel } from 'ngx-logger/lib/types/logger-level.enum';
 
 @Component({
   selector: 'app-videos',
@@ -15,7 +16,7 @@ export class VideosComponent implements OnInit {
   itemsPerPage: number;
   currentPage: number;
   constructor(private videosService: VideosService,
-    private logger: NGXLogger) { }
+    private logger: NgxLoggerLevel) { }
 
   ngOnInit() {
     this.videosService.fetchVideos().subscribe((res: any) => {
