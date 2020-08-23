@@ -55,7 +55,7 @@ export class HomeComponent implements OnInit {
 
   showMore: boolean = false;
 
-  @ViewChild('logoList') logoList: ElementRef;
+  @ViewChild('logoList', { static: true }) logoList: ElementRef;
   @ViewChild('figure') figure: ElementRef;
 
   constructor(private tomatoService: TomatoService,

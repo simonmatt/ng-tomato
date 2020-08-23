@@ -24,11 +24,11 @@ export class VideoPlayerComponent implements OnInit {
   selectedSup: boolean = false;
   loading: boolean = true;
 
-  @ViewChild('video') video: ElementRef;
-  @ViewChild('progressBar') progressBar: ElementRef;
-  @ViewChild('progress') progress: ElementRef;
-  @ViewChild('volumeBar') volumeBar: ElementRef;
-  @ViewChild('volumeLevle') volumeLevle: ElementRef;
+  @ViewChild('video', { static: true }) video: ElementRef;
+  @ViewChild('progressBar', { static: true }) progressBar: ElementRef;
+  @ViewChild('progress', { static: true }) progress: ElementRef;
+  @ViewChild('volumeBar', { static: true }) volumeBar: ElementRef;
+  @ViewChild('volumeLevle', { static: true }) volumeLevle: ElementRef;
   constructor(private activatedRoute: ActivatedRoute,
     private videosService: VideosService) { }
 
