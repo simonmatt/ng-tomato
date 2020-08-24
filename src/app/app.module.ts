@@ -7,10 +7,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 
-import { VgCoreModule } from 'videogular2/core';
-import { VgControlsModule } from 'videogular2/controls';
-import { VgOverlayPlayModule } from 'videogular2/overlay-play';
-import { VgBufferingModule } from 'videogular2/buffering';
+import { VgCoreModule, VgControlsModule, VgOverlayPlayModule, VgBufferingModule } from 'ngx-videogular';
+
+// import { VgCoreModule } from 'videogular2/core';
+// import { VgControlsModule } from 'videogular2/controls';
+// import { VgOverlayPlayModule } from 'videogular2/overlay-play';
+// import { VgBufferingModule } from 'videogular2/buffering';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';

@@ -13,7 +13,7 @@ export class VideosService {
 
   }
 
-  fetchVideos(p?:any) {
+  fetchVideos(p?: any) {
     if (!p) {
       return this.http.get(`${NODE_API_BASE_URL}/api/videos`);
     } else {

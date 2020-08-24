@@ -21,8 +21,10 @@ export class BaseInterceptorService implements HttpInterceptor {
     //   })
     // }
 
-    return next.handle(req).pipe(mergeMap((event: any) => {
-      return Observable.create(observer => observer.next(event));
-    }))
+    return next.handle(req)
+      .pipe
+      (mergeMap((event: any) => {
+        return new Observable<HttpEvent<any>>();
+      }));
   }
 }
