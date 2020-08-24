@@ -5965,6 +5965,11 @@ ngx-logger@^4.1.9:
     tslib "^1.9.0"
     vlq "^1.0.0"
 
+ngx-videogular@^9.0.1:
+  version "9.0.1"
+  resolved "https://registry.npm.taobao.org/ngx-videogular/download/ngx-videogular-9.0.1.tgz#05959140957989018959553e5279157f258c8a8f"
+  integrity sha1-BZWRQJV5iQGJWVU+UnkVfyWMio8=
+
 nice-try@^1.0.4:
   version "1.0.5"
   resolved "http://registry.npm.taobao.org/nice-try/download/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
